@@ -1,0 +1,11 @@
+{
+  "name": "service_registery",
+  "version": "1.0.0",
+  "description": "This application is used to register microservices. Consumer will call its api to get microservices details like ip, port etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhishek",
+  "license": "ISC"
+}

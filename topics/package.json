@@ -1,0 +1,11 @@
+{
+  "name": "topics_service",
+  "version": "1.0.0",
+  "description": "This API is used to store topics under specific category.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhishek",
+  "license": "ISC"
+}
