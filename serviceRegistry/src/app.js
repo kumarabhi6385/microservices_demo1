@@ -5,7 +5,8 @@ import serviceRoute from "./serviceRoutes.js";
 
 const service = express();
 
-service.use(express.json());
+service.use(express.json({ extended: true }));
+service.use(express.urlencoded({ extended: true }));
 
 service.config = config;
 

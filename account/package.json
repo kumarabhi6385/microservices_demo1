@@ -1,5 +1,5 @@
 {
-  "name": "user_management_service",
+  "name": "user_account_service",
   "version": "1.0.0",
   "description": "This service is used to manage users and authentication & authorization purpose.",
   "main": "src/bin/server.js",

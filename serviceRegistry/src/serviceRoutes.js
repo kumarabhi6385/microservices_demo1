@@ -1,21 +1,24 @@
 import ServiceController from "./serviceController.js";
 
-const routes = (app) => {
-  const controller = new ServiceController();
-  app
-    .route("/register")
+const routes = (service) => {
+  const controller = new ServiceController(service.config.log);
+  service
+    .route("/register/:servicename/:serviceversion/:serviceport")
     // Below API is used to register microservices
-    .post(controller.register);
+    .put(controller.register);
 
-  app
-    .route("/unregister")
+  service
+    .route("/unregister/:servicename/:serviceversion/:serviceport")
     // Below API is used to unregister microservices
     .delete(controller.unregister);
 
-  app
-    .route("/find/:name/:version")
+  service
+    .route("/find/:servicename/:serviceversion")
     // Below API is used to unregister microservices
     .get(controller.findService);
+  service.route("/").get((req, res, next) => {
+    res.send("service Registry");
+  });
 };
 
 export default routes;

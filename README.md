@@ -26,3 +26,4 @@ npm i axios
 
 npm i mongoose jsonwebtoken
 npm i bycrypt (only for user managment)
+npm i semver (for service registry to match versions)

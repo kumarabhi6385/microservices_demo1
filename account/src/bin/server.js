@@ -19,20 +19,30 @@ mongoose
   });
 
 server.on("listening", () => {
-  /*
-  const registerService = () =>
+  const registerService = () => {
     axios.put(
       `${config.registrationURL}/register/${config.name}/${config.version}/${
         server.address().port
       }`
     );
-  const unregisterService = () =>
+    log.info(
+      `Register ${config.registrationURL}/register/${config.name}/${
+        config.version
+      }/${server.address().port}`
+    );
+  };
+  const unregisterService = () => {
     axios.delete(
       `${config.registrationURL}/register/${config.name}/${config.version}/${
         server.address().port
       }`
     );
-
+    log.info(
+      `Unregister ${config.registrationURL}/register/${config.name}/${
+        config.version
+      }/${server.address().port}`
+    );
+  };
   registerService();
 
   const interval = setInterval(registerService, 20000);
@@ -55,7 +65,7 @@ server.on("listening", () => {
     await cleanup();
     process.exit(0);
   });
-*/
+
   log.info(
     `Hi there! I'm User Management service and listening on port ${
       server.address().port
