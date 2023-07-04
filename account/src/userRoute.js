@@ -1,7 +1,12 @@
 import UserController from "./userController.js";
 
 const routes = (service) => {
-  const controller = new UserController(service.config.log);
+  const controller = new UserController(
+    service.config.log,
+    service.config.salt,
+    service.config.secret,
+    service.config.expiry
+  );
   service
     .route("/auth/register")
     // Below API is used for registration purpose

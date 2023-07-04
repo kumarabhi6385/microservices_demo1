@@ -2,7 +2,7 @@
   "name": "user_management_service",
   "version": "1.0.0",
   "description": "This service is used to manage users and authentication & authorization purpose.",
-  "main": "index.js",
+  "main": "src/bin/server.js",
   "type": "module",
   "scripts": {
     "start": "node src/bin/server"
@@ -11,9 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
     "bunyan": "^1.8.15",
     "bunyan-format": "^0.2.1",
     "dotenv": "^16.3.1",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.3.1"
   }
 }

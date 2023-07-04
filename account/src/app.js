@@ -5,10 +5,11 @@ import userRoute from "../src/userRoute.js";
 
 const service = express();
 
-service.use(express.json());
+service.use(express.json({ extended: true }));
+service.use(express.urlencoded({ extended: true }));
 
-service.config = config;
 const logger = new Logger(config);
+service.config = config;
 
 if (service.get("env") === "development") {
   service.use(logger.logDevelopment);

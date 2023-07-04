@@ -19,13 +19,18 @@ const log = bunyan.createLogger({
   level: process.env.LOG_LEVEL,
 });
 
-const packageFile = fs.readFileSync("package.json");
+const data = fs.readFileSync(path.resolve(__dirname, "./package.json"));
+const applicationInfo = JSON.parse(data);
 
 const config = {
   log,
-  name: packageFile.name,
-  version: packageFile.version,
+  name: applicationInfo.name,
+  version: applicationInfo.version,
   registrationURL: process.env.REGISTRATION_URL,
+  mongodb_url: process.env.MONGO_URL,
+  salt: process.env.salt,
+  secret: process.env.secret,
+  expiry: process.env.EXPIRY,
 };
 
 export default config;
