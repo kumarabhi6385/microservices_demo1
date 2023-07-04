@@ -19,6 +19,7 @@ mongoose
   });
 
 server.on("listening", () => {
+  /*
   const registerService = () =>
     axios.put(
       `${config.registrationURL}/register/${config.name}/${config.version}/${
@@ -54,7 +55,7 @@ server.on("listening", () => {
     await cleanup();
     process.exit(0);
   });
-
+*/
   log.info(
     `Hi there! I'm User Management service and listening on port ${
       server.address().port

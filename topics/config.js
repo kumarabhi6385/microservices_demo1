@@ -26,6 +26,8 @@ const config = {
   name: packageFile.name,
   version: packageFile.version,
   registrationURL: process.env.REGISTRATION_URL,
+  mongodb_url: process.env.MONGO_URL,
+  secret: process.env.secret,
 };
 
 export default config;

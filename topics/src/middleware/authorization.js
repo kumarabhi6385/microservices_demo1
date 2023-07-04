@@ -1,6 +1,6 @@
 import config from "../../config.js";
 
-const log = config.logger;
+const log = config.log;
 
 export const loginRequired = (req, res, next) => {
   if (req.user) {

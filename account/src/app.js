@@ -21,6 +21,4 @@ userRoute(service);
 // Global error handler
 service.use(logger.errorHandler);
 
-service.use(express.json());
-
 export default service;

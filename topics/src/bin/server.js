@@ -1,13 +1,22 @@
 import http from "http";
 import axios from "axios";
 import service from "../app.js";
+import mongoose from "mongoose";
 
 const server = http.createServer(service);
 const config = service.config;
 const log = config.log;
 
-// Microservice should not run on specif port. it should choose port randomly.
-server.listen(0);
+mongoose
+  .connect(config.mongodb_url)
+  .then(() => {
+    // Microservice should not run on specif port. it should choose port randomly.
+    log.info("Connected to mongo db");
+    server.listen(0);
+  })
+  .catch((err) => {
+    log.info(`Failed to connect to Mongo DB : ${err}`);
+  });
 
 server.on("listening", () => {
   const registerService = () =>
