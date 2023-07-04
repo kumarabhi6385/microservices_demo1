@@ -1,23 +1,22 @@
-class GlobalHandler {
+class LoggerMiddleWare {
   constructor(config) {
     this.log = config.log;
   }
 
   logDevelopment = (req, res, next) => {
-    config.log.debug(`${req.method}: ${req.url}`);
+    this.log.debug(`${req.method}: ${req.url}`);
     return next();
   };
 
   errorHandler = (err, req, res, next) => {
-    res.status(error.status || 500);
     // Log out the error to the console
-    log.error(error);
-    return res.json({
+    this.log.error(err);
+    return res.status(err.status || 500).json({
       error: {
-        message: error.message,
+        message: err.message,
       },
     });
   };
 }
 
-export default GlobalHandler;
+export default LoggerMiddleWare;

@@ -6,7 +6,7 @@ class ServiceController {
   unregister = async (req, res, next) => {
     return next("Not implemented yet");
   };
-  getservices = async (req, res, next) => {
+  findService = async (req, res, next) => {
     return next("Not implemented yet");
   };
 }

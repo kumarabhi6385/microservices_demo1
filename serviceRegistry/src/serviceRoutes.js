@@ -1,4 +1,4 @@
-import ServiceController from './serviceController.js'
+import ServiceController from "./serviceController.js";
 
 const routes = (app) => {
   const controller = new ServiceController();
@@ -12,11 +12,10 @@ const routes = (app) => {
     // Below API is used to unregister microservices
     .delete(controller.unregister);
 
-
-    app
-    .route("/services")
+  app
+    .route("/find/:name/:version")
     // Below API is used to unregister microservices
-    .get(controller.getservices);
+    .get(controller.findService);
 };
 
 export default routes;

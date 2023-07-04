@@ -1,4 +1,5 @@
 import path from "path";
+import fs from "fs";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import bunyan from "bunyan";
@@ -13,14 +14,18 @@ dotenv.config({ path: path.resolve(__dirname, "./.env") });
 const formatOut = formatter({ color: true });
 
 const log = bunyan.createLogger({
-  name: "Microservice_Registration",
+  name: "Micorservice Consumer",
   stream: formatOut,
   level: process.env.LOG_LEVEL,
 });
 
+const packageFile = fs.readFileSync("package.json");
+
 const config = {
-  port: process.env.PORT,
   log,
+  name: packageFile.name,
+  version: packageFile.version,
+  registrationURL: process.env.REGISTRATION_URL,
 };
 
 export default config;

@@ -7,6 +7,9 @@ This demo has below parts
 # Microservices - 1
 
 This microservice is used to create topic and categories
+set up:
+npm i express dotenv bunyan bunyan-format
+npm i axios
 
 # Microservices - 2
 

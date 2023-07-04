@@ -1,5 +1,5 @@
 import express from "express";
-import GlobalHandler from "./middleware/global.js";
+import LoggerMiddleWare from "./middleware/logger.js";
 import config from "../config.js";
 import serviceRoute from "./serviceRoutes.js";
 
@@ -9,7 +9,7 @@ service.use(express.json());
 
 service.config = config;
 
-const middleware = new GlobalHandler(config);
+const middleware = new LoggerMiddleWare(config);
 
 if (service.get("env") === "development") {
   service.use(middleware.logDevelopment);
